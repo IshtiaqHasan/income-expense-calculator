@@ -1,37 +1,13 @@
 document.getElementById('expense-btn').addEventListener('click', function () {
     expenses();
-    errorHandle();
-    const inputMoney = document.getElementById('income').value;
-    const foodCost = document.getElementById('food-expense').value;
-    const rentCost = document.getElementById('rent-expense').value;
-    const clothCost = document.getElementById('cloth-expense').value;
-
-    if (foodCost > inputMoney) {
-        const message = document.getElementById('add-correctValue')
-        message.style.display = 'block';
-    }
-    if (rentCost > inputMoney) {
-        const message = document.getElementById('add-correctValue')
-        message.style.display = 'block';
-    }
-    if (clothCost > inputMoney) {
-        const message = document.getElementById('add-correctValue')
-        message.style.display = 'block';
-    }
-
+    errrorInput();
 
 });
 
 document.getElementById('saving-button').addEventListener('click', function () {
     expenses();
-    errorHandle();
-    const inputMoney = document.getElementById('income').value;
-    const savingAmount = document.getElementById('saving-amount').innerText;
+    errorSaving();
 
-    if (savingAmount > inputMoney / 2) {
-        const message = document.getElementById('saving-warning')
-        message.style.display = 'block';
-    }
 
 });
 
@@ -74,8 +50,45 @@ function expenses() {
     const remainingBlanceAmount = totalBalance - saving;
     remainingBalance.innerText = remainingBlanceAmount;
 
-}
-function error() {
 
 }
+function errorSaving() {
+    const inputMoney = document.getElementById('income').value;
+    const savingAmount = document.getElementById('saving-amount').innerText;
+
+    if (savingAmount > inputMoney / 2) {
+        const message = document.getElementById('saving-warning')
+        message.style.display = 'block';
+    }
+
+}
+function errrorInput() {
+    const foodCost = document.getElementById('food-expense').value;
+    const rentCost = document.getElementById('rent-expense').value;
+    const clothCost = document.getElementById('cloth-expense').value;
+
+    const totalCost = parseFloat(foodCost) + parseFloat(rentCost) + parseFloat(clothCost);
+
+    const income = document.getElementById('income').value;
+    const incomeAmount = parseFloat(income);
+
+    if (foodCost > incomeAmount) {
+        const message = document.getElementById('add-correctValue')
+        message.style.display = 'block';
+    }
+    else if (rentCost > incomeAmount) {
+        const message = document.getElementById('add-correctValue')
+        message.style.display = 'block';
+    }
+    else if (clothCost > incomeAmount) {
+        const message = document.getElementById('add-correctValue')
+        message.style.display = 'block';
+    }
+    else if (totalCost > incomeAmount) {
+        const message = document.getElementById('add-correctValue')
+        message.style.display = 'block';
+    }
+}
+
+
 

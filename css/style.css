@@ -22,9 +22,7 @@ input {
     
 }
 
-input value-0{
-  display: hidden;
-}
+
 .notify{
    color: red;
    text-align: center;
