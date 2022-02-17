@@ -19,4 +19,14 @@ input {
     border-left-style: hidden;
     border-bottom-style: hidden;
     background-color: rgb(224, 220, 220);
-  }
+    
+}
+
+input value-0{
+  display: hidden;
+}
+.notify{
+   color: red;
+   text-align: center;
+   display: none;
+}
