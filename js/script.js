@@ -75,5 +75,7 @@ function expenses() {
     remainingBalance.innerText = remainingBlanceAmount;
 
 }
+function error() {
 
+}
 
