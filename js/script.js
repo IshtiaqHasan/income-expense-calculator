@@ -1,6 +1,7 @@
 document.getElementById('expense-btn').addEventListener('click', function () {
     expenses();
     errrorInput();
+    wrongInput()
 });
 
 document.getElementById('saving-button').addEventListener('click', function () {
@@ -59,6 +60,14 @@ function errorSaving() {
     }
 
 }
+function wrongInput() {
+    const income = document.getElementById('income').value;
+    const incomeAmount = parseFloat(income);
+    if (incomeAmount < 1) {
+        const alarm = document.getElementById('input-error')
+        alarm.style.display = 'block';
+    }
+}
 function errrorInput() {
     const foodCost = document.getElementById('food-expense').value;
     const rentCost = document.getElementById('rent-expense').value;
@@ -68,6 +77,7 @@ function errrorInput() {
 
     const income = document.getElementById('income').value;
     const incomeAmount = parseFloat(income);
+
 
     if (foodCost > incomeAmount) {
         const message = document.getElementById('add-correctValue')
