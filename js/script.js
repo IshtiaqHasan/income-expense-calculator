@@ -1,14 +1,11 @@
 document.getElementById('expense-btn').addEventListener('click', function () {
     expenses();
     errrorInput();
-
 });
 
 document.getElementById('saving-button').addEventListener('click', function () {
     expenses();
     errorSaving();
-
-
 });
 
 
@@ -88,6 +85,7 @@ function errrorInput() {
         const message = document.getElementById('add-correctValue')
         message.style.display = 'block';
     }
+
 }
 
 
